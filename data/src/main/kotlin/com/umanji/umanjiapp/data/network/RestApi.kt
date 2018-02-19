@@ -1,6 +1,7 @@
 package com.umanji.umanjiapp.data.network
 
 import com.umanji.umanjiapp.data.entity.AuthInfoEntity
+import com.umanji.umanjiapp.data.entity.GroupEntity
 import com.umanji.umanjiapp.data.entity.PortalEntity
 import com.umanji.umanjiapp.data.entity.PostEntity
 import io.reactivex.Completable
@@ -92,4 +93,10 @@ interface RestApi {
     fun portal(
             @Query("rid") id: String
     ): Single<ApiResponse<PortalEntity>>
+
+    @FormUrlEncoded
+    @POST("group/create")
+    fun createGroup(
+            @PartMap group: MutableMap<String, RequestBody>
+    ): Completable
 }

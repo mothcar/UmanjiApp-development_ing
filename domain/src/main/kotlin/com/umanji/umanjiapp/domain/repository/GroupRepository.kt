@@ -13,4 +13,6 @@ interface GroupRepository {
      * Get a [Single] which will emit a [Group].
      */
     fun createGroup(group_name: Group) : Completable
+
+//    fun createGroup(group_name: String): Single<Group>
 }
